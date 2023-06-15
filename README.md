@@ -1,1 +1,11 @@
 # port80_open
+- This code will loop through your google cloud projects and list all the services and output then to an endpoints.txt file
+- The file containing the list of endpoints is stored in the endpoints_file variable. 
+  - (You can modify this variable to match the name or path of your actual endpoints file.)
+- The while loop reads each line from the endpoints file and assigns it to the endpoint variable. 
+- It continues until all lines are processed.
+- The tcping command is used to perform the TCP ping for each endpoint. 
+  - It pings port 80 with a timeout of 5 seconds.
+- Depending on the result of the TCP ping, an appropriate message is echoed to the corresponding file: 
+  - if the port 80 is reachable it writes the output to (port80open.txt) or vice versa if port 80 is unreachaeable (port80closed.txt).
+- Make sure you have the tcping utility installed on your system before running the script.
