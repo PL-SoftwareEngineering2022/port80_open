@@ -5,7 +5,7 @@ endpoints_file="endpoints.txt"
 
 # Loop through each endpoint in the file
 while IFS= read -r endpoint || [[ -n "$endpoint" ]]; do
-  # Perform the TCP ping for port 80 with a timeout of 10 seconds
+  # Perform the TCP ping for port 80 with a timeout of 5 seconds
   if tcping -t 5 "$endpoint" 80; then
     echo "$endpoint is reachable" >> port80open.txt
   else
